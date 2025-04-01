@@ -2,7 +2,7 @@
   "name": "start-launcher",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "js/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
