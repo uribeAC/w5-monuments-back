@@ -1,4 +1,4 @@
-import { Location, MonumentStructure } from "./types";
+import { Location, MonumentStructure } from "./types.js";
 import { v4 as uuidv4 } from "uuid";
 
 class Monument implements MonumentStructure {

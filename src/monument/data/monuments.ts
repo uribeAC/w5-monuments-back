@@ -1,5 +1,5 @@
-import Monument from "./Monument";
-import { MonumentStructure } from "./types";
+import Monument from "../Monument.js";
+import { MonumentStructure } from "../types.js";
 
 const eiffelTower = new Monument(
   "Eiffel Tower",
