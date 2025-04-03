@@ -9,6 +9,10 @@ describe("Given the checkHealthStatus middleware", () => {
       json: jest.fn(),
     } as Pick<Response, "status" | "json">;
 
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
     test("Then it should call the receives respon's method status with 200", () => {
       checkHealthStatus(req, res as Response);
 
