@@ -1,6 +1,6 @@
 import { Request } from "express";
 import { Response } from "express";
-import handleEndpointNotFound from "./handleEndpointNotFound.js";
+import handleEndpointNotFound from "../handleEndpointNotFound.js";
 
 describe("Given the handleEndpointNotFound middleware", () => {
   describe("When it receives a response", () => {
