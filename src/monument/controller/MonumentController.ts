@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { MonumentStructure } from "../types.js";
+import { MonumentCommonData, MonumentStructure } from "../types.js";
 import { MonumentControllerStructure } from "./types.js";
 import Monument from "../Monument.js";
 
@@ -11,7 +11,7 @@ class MonumentController implements MonumentControllerStructure {
   };
 
   addMonument = (req: Request, res: Response): void => {
-    const monument = req.body as MonumentStructure;
+    const monument = req.body as MonumentCommonData;
 
     const newMonument = new Monument(
       monument.name,
@@ -26,7 +26,7 @@ class MonumentController implements MonumentControllerStructure {
     }
 
     this.monuments.push(newMonument);
-    res.status(200).json(newMonument);
+    res.status(201).json(newMonument);
   };
 }
 
