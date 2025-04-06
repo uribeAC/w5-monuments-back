@@ -18,7 +18,7 @@ describe("Given the addMonument function", () => {
 
   afterEach(() => {
     jest.clearAllMocks();
-    japanMonuments = [sensojiTemple];
+    japanMonuments = [sensojiTemple, himejiCastle];
     monumentController = new MonumentController(japanMonuments);
   });
 
@@ -70,7 +70,7 @@ describe("Given the addMonument function", () => {
     });
   });
 
-  describe("When it receives a request with Senso-ji Temple and a response for this monument", () => {
+  describe("When it receives a request with the existent monument Senso-ji Temple", () => {
     const req = {
       body: {
         id: "",
@@ -84,13 +84,13 @@ describe("Given the addMonument function", () => {
       },
     } as Pick<Request, "body">;
 
-    test("Then it call the received response's method status with 409", () => {
+    test("Then it should call the received response's method status with 409", () => {
       monumentController.addMonument(req as Request, res as Response);
 
       expect(res.status).toHaveBeenCalledWith(409);
     });
 
-    test("Then it call the received response's method json with an 'Duplicated monument, already in data' error ", () => {
+    test("Then it should call the received response's method json with a 'Duplicated monument, already in data' error ", () => {
       monumentController.addMonument(req as Request, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({
