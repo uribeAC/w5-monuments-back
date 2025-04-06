@@ -70,7 +70,7 @@ describe("Given the addMonument function", () => {
     });
   });
 
-  describe("When it receives a request with the existent monument Senso-ji Temple", () => {
+  describe("When it receives a request with the already existent monument Senso-ji Temple", () => {
     const req = {
       body: {
         id: "",
