@@ -1,5 +1,5 @@
 import Monument from "./Monument.js";
-import { MonumentStructure } from "./types.js";
+import { MonumentCommonData } from "./types.js";
 
 export const sensojiTemple = new Monument(
   "Templo Sensō-ji",
@@ -17,8 +17,7 @@ export const himejiCastle = new Monument(
 
 export const japanMonuments = [sensojiTemple, himejiCastle];
 
-export const tokyoTowerData: MonumentStructure = {
-  id: "",
+export const tokyoTowerData: MonumentCommonData = {
   name: "Tokyo Tower",
   description:
     "Es una torre de celosía inspirada en la Torre Eiffel que está pintada de color blanco y naranja.",
