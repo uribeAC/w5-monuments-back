@@ -6,7 +6,7 @@ import Monument from "../Monument.js";
 class MonumentController implements MonumentControllerStructure {
   constructor(private monuments: MonumentStructure[]) {}
 
-  getMonuments = (req: Request, res: Response): void => {
+  getMonuments = (_req: Request, res: Response): void => {
     res.status(200).json({ monuments: this.monuments });
   };
 
@@ -26,7 +26,7 @@ class MonumentController implements MonumentControllerStructure {
     }
 
     this.monuments.push(newMonument);
-    res.status(200).json({ monument: newMonument });
+    res.status(200).json(newMonument);
   };
 }
 
