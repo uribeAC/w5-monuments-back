@@ -2,6 +2,13 @@ import { Response, Request } from "express";
 import { MonumentCommonData, MonumentStructure } from "../types.js";
 import { MonumentControllerStructure } from "./types.js";
 import Monument from "../Monument.js";
+import {
+  coliseo,
+  eiffelTower,
+  fushimiInari,
+  greatWallOfChina,
+  tajMahal,
+} from "../data/monuments.js";
 
 class MonumentController implements MonumentControllerStructure {
   constructor(private monuments: MonumentStructure[]) {}
@@ -25,6 +32,13 @@ class MonumentController implements MonumentControllerStructure {
       return;
     }
 
+    this.monuments = [
+      eiffelTower,
+      tajMahal,
+      fushimiInari,
+      coliseo,
+      greatWallOfChina,
+    ];
     this.monuments.push(newMonument);
     res.status(201).json(newMonument);
   };
