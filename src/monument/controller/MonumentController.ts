@@ -26,7 +26,7 @@ class MonumentController implements MonumentControllerStructure {
     }
 
     this.monuments.push(newMonument);
-    res.status(200).json(newMonument);
+    res.status(201).json(newMonument);
   };
 }
 

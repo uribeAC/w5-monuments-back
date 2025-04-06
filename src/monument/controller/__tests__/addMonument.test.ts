@@ -27,10 +27,10 @@ describe("Given the addMonument function", () => {
       body: tokyoTowerData,
     } as Pick<Request, "body">;
 
-    test("Then it should call the received response's method status with 200", () => {
+    test("Then it should call the received response's method status with 201", () => {
       monumentController.addMonument(req as Request, res as Response);
 
-      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res.status).toHaveBeenCalledWith(201);
     });
 
     test("Then it should call the received response's method json with a monument named 'Tokyo Tower'", () => {
