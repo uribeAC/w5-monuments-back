@@ -31,12 +31,13 @@ class MonumentController implements MonumentControllerStructure {
   };
 
   deleteMonument = (req: Request, res: Response): void => {
-    const monumentId = req.body as string;
+    const { monumentId } = req.params;
 
     const monumentToDelete = this.monuments.find(
       (monument) => monument.id === monumentId,
     );
 
+    console.log(monumentToDelete);
     if (!monumentToDelete) {
       res.status(404).json({ error: "Monument not found in database" });
     }
