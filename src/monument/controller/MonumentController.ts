@@ -20,12 +20,31 @@ class MonumentController implements MonumentControllerStructure {
     );
 
     if (this.monuments.some((monument) => monument.name === newMonument.name)) {
-      res.status(409).json({ error: "Duplicated monument, already in data" });
+      res
+        .status(409)
+        .json({ error: "Duplicated monument, already in database" });
       return;
     }
 
     this.monuments.push(newMonument);
     res.status(201).json(newMonument);
+  };
+
+  deleteMonument = (req: Request, res: Response): void => {
+    const monumentId = req.body as string;
+
+    const monumentToDelete = this.monuments.find(
+      (monument) => monument.id === monumentId,
+    );
+
+    if (!monumentToDelete) {
+      res.status(404).json({ error: "Monument not found in database" });
+    }
+
+    this.monuments = this.monuments.filter(
+      (monument) => monument.id !== monumentId,
+    );
+    res.status(200).json(monumentToDelete);
   };
 }
 
