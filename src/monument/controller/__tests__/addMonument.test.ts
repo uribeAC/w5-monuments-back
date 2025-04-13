@@ -90,11 +90,11 @@ describe("Given the addMonument function", () => {
       expect(res.status).toHaveBeenCalledWith(409);
     });
 
-    test("Then it should call the received response's method json with a 'Duplicated monument, already in data' error ", () => {
+    test("Then it should call the received response's method json with a 'Duplicated monument, already in database' error ", () => {
       monumentController.addMonument(req as Request, res as Response);
 
       expect(res.json).toHaveBeenCalledWith({
-        error: "Duplicated monument, already in data",
+        error: "Duplicated monument, already in database",
       });
     });
   });
