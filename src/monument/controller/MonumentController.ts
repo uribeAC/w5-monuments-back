@@ -3,7 +3,7 @@ import { MonumentCommonData, MonumentStructure } from "../types.js";
 import { MonumentControllerStructure } from "./types.js";
 import Monument from "../Monument.js";
 class MonumentController implements MonumentControllerStructure {
-  constructor(private monuments: MonumentStructure[]) {}
+  constructor(public monuments: MonumentStructure[]) {}
 
   getMonuments = (_req: Request, res: Response): void => {
     res.status(200).json({ monuments: this.monuments });
@@ -31,20 +31,22 @@ class MonumentController implements MonumentControllerStructure {
   };
 
   deleteMonument = (req: Request, res: Response): void => {
-    const { monumentId } = req.params;
+    const monumentId = req.params.monumentId;
 
     const monumentToDelete = this.monuments.find(
       (monument) => monument.id === monumentId,
     );
 
-    console.log(monumentToDelete);
     if (!monumentToDelete) {
       res.status(404).json({ error: "Monument not found in database" });
+      return;
     }
 
-    this.monuments = this.monuments.filter(
-      (monument) => monument.id !== monumentId,
+    const monumentToDeletePosition = this.monuments.findIndex(
+      (monument) => monument.id === monumentId,
     );
+    this.monuments.splice(monumentToDeletePosition, 1);
+
     res.status(200).json(monumentToDelete);
   };
 }
