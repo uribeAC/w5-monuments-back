@@ -3,7 +3,7 @@ import { MonumentCommonData, MonumentStructure } from "../types.js";
 import { MonumentControllerStructure } from "./types.js";
 import Monument from "../Monument.js";
 class MonumentController implements MonumentControllerStructure {
-  constructor(public monuments: MonumentStructure[]) {}
+  constructor(private monuments: MonumentStructure[]) {}
 
   getMonuments = (_req: Request, res: Response): void => {
     res.status(200).json({ monuments: this.monuments });
