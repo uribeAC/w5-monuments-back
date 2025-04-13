@@ -3,37 +3,58 @@ import { MonumentStructure } from "../types.js";
 
 const eiffelTower = new Monument(
   "Eiffel Tower",
-  "La Torre Eiffel es una torre de hierro en París, Francia, y es uno de los monumentos más emblemáticos del mundo.",
-  "https://media.architecturaldigest.com/photos/66a951edce728792a48166e6/3:2/w_7950,h_5300,c_limit/GettyImages-955441104.jpg",
-  { country: "Francia", city: "Paris" },
+  "The Eiffel Tower is an iron tower in Paris and is one of the most iconic monuments in the world.",
+  "https://i.imgur.com/6yS7uk5.jpg",
+  { country: "France", city: "Paris" },
 );
 
 const tajMahal = new Monument(
   "Taj Mahal",
-  "El Taj Mahal es un mausoleo de mármol blanco en la ciudad de Agra, India, y es una de las Siete Maravillas del Mundo.",
-  "https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg",
+  "The Taj Mahal is a white marble mausoleum in the city of Agra and is one of the Seven Wonders of the World.",
+  "https://i.imgur.com/nEjkGBX.jpg",
   { country: "India", city: "Agra" },
 );
 
 const fushimiInari = new Monument(
   "Fushimi Inari Taisha",
-  "El Fushimi Inari Taisha es un santuario sintoísta en Kioto, Japón, famoso por sus miles de torii rojos que forman senderos en la montaña Inari.",
-  "https://www.agoda.com/wp-content/uploads/2024/07/Fushimi-Inari-Shrine-Kyoto-Japan.jpg",
-  { country: "Japón", city: "Kioto" },
+  "Fushimi Inari Taisha is a Shinto shrine in Kyoto famous for its thousands of red torii gates that form paths on Mount Inari.",
+  "https://i.imgur.com/mkIzxxJ.jpg",
+  { country: "Japan", city: "Kyoto" },
 );
 
 const coliseo = new Monument(
-  "Coliseo de Roma",
-  "El Coliseo es un anfiteatro de la antigua Roma, situado en el centro de Roma, Italia, conocido por ser un símbolo de la civilización romana.",
-  "https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg",
-  { country: "Italia", city: "Roma" },
+  "Colosseum of Rome",
+  "The Colosseum is an ancient Roman amphitheater located in the center of Rome known for being a symbol of Roman civilization.",
+  "https://i.imgur.com/jFbfQk4.jpg",
+  { country: "Italy", city: "Rome" },
 );
 
 const greatWallOfChina = new Monument(
   "Great Wall of China",
-  "La Gran Muralla China es una serie de fortificaciones construidas a lo largo de la parte norte de China para protegerse de invasores.",
-  "https://whc.unesco.org/uploads/thumbs/site_0438_0035-1200-630-20241024162522.jpg",
+  "The Great Wall of China is a series of fortifications built along northern China to protect against invaders.",
+  "https://i.imgur.com/9vyTMBW.jpg",
   { country: "China", city: "Beijing" },
+);
+
+const terracottaWarriors = new Monument(
+  "Terracotta Warriors",
+  "The Terracotta Warriors are a collection of life-sized figures representing the soldiers, horses, and chariots of the army of the first emperor of China.",
+  "https://i.imgur.com/hkEDFng.jpg",
+  { country: "China", city: "Xi'an" },
+);
+
+const sagradaFamilia = new Monument(
+  "Sagrada Familia",
+  "The Sagrada Familia is a Catholic basilica in Spain designed by architect Antoni Gaudí, known for its unique architecture and ongoing construction since 1882.",
+  "https://i.imgur.com/ocTENCg.jpg",
+  { country: "Spain", city: "Barcelona" },
+);
+
+const neuschwansteinCastle = new Monument(
+  "Neuschwanstein Castle",
+  "Neuschwanstein Castle is a fairy-tale-like castle located in Germany famous for its magical appearance and for inspiring the Disney 'Sleeping Beauty' castle.",
+  "https://i.imgur.com/5DzlAgJ.jpg",
+  { country: "Germany", city: "Bavaria" },
 );
 
 export const monuments: MonumentStructure[] = [
@@ -42,4 +63,7 @@ export const monuments: MonumentStructure[] = [
   fushimiInari,
   coliseo,
   greatWallOfChina,
+  terracottaWarriors,
+  sagradaFamilia,
+  neuschwansteinCastle,
 ];
